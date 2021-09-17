@@ -7,12 +7,10 @@ import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import styled from "@emotion/styled";
-
-const Button = styled.button`
-  color: hotpink;
-`;
+import Button from "../components/ui/Button";
 
 export default function Index({ allPosts }) {
+  console.log("allPosts", allPosts);
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (

@@ -36,6 +36,8 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
+  console.log("page", page);
+  console.log("blocks", blocks);
   return (
     <div>
       <Head>
@@ -75,7 +77,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { id } = context.params;
-  console.log("context.params", context.params);
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 
