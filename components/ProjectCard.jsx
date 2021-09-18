@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import Link from "next/link";
 // import Img from "gatsby-image";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
@@ -159,7 +159,7 @@ const ProjectCardImageContainer = styled("div")`
 `;
 
 const ProjectCard = ({ category, title, description, thumbnail, uid }) => (
-  <ProjectCardContainer to={`/work/${uid}`}>
+  <ProjectCardContainer href={`/work/${uid}`}>
     <ProjectCardContent className="ProjectCardContent">
       {/* <ProjectCardCategory>
                 {category}
