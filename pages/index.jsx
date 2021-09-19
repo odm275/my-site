@@ -139,9 +139,34 @@ export default function Index({ allProjects }) {
   return (
     <>
       <Layout>
-        <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
+        <Hero>
+          <div>
+            <h1 data-pm-context="[]">
+              Hola! My name is <a href="/">Oscar Mejia</a>. Here you can find a
+              showcase of my <a href="/work">work</a> and my{" "}
+              <a href="/blog" data-span="hyperlink">
+                thoughts
+              </a>
+              ! Here’s my full{" "}
+              <a
+                href="https://drive.google.com/file/d/1IIZI5jXqvhFj5Tmfd5RYApWd0cer4MD4/view"
+                target="_blank"
+                rel="noopener"
+              >
+                CV
+              </a>
+              .
+            </h1>
+          </div>
+
+          <a
+            href={`mailto:oscarmejiaweb@gmail.com`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Email Me</Button>
+          </a>
+        </Hero>
         <Section>
           {projectCards}
           {/* {heroPost && (
