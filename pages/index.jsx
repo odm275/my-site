@@ -117,38 +117,34 @@ const WorkAction = styled(Link)`
   }
 `;
 
-export default function Index({ allPosts }) {
-  console.log("allPosts", allPosts);
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
-  // const projectCards = projects.map((project, i) => {
-  //   const { title, slug, kinds } = project.node
-  //   const {
-  //     previewThumbnail,
-  //     description,
-  //     previewDescription,
-  //   } = project.node.ACFProjectFields
-
-  //   return (
-  //     <ProjectCard
-  //       key={i}
-  //       category={kinds}
-  //       title={title}
-  //       description={previewDescription}
-  //       thumbnail={previewThumbnail}
-  //       uid={slug}
-  //     />
-  //   )
-  // })
+export default function Index({ allProjects }) {
+  console.log("allProjects", allProjects);
+  const heroPost = allProjects[0];
+  const morePosts = allProjects.slice(1);
+  const projectCards = allProjects.map((project, i) => {
+    const { title, description, coverImage, slug } = project;
+    console.log("description", description);
+    return (
+      <ProjectCard
+        key={i}
+        title={title}
+        // category={kinds}
+        description={description}
+        coverImage={coverImage}
+        slug={slug}
+      />
+    );
+  });
+  console.log(projectCards);
   return (
     <>
       <Layout>
         <Head>
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
-        <Container>
-          <Intro />
-          {heroPost && (
+        <Section>
+          {projectCards}
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -158,24 +154,26 @@ export default function Index({ allPosts }) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+        </Section>
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const allProjects = getAllPosts([
     "title",
     "date",
     "slug",
+    "description",
     "author",
     "coverImage",
     "excerpt",
   ]);
+  console.log("allProjects", allProjects);
 
   return {
-    props: { allPosts },
+    props: { allProjects },
   };
 }

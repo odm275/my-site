@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-// import Img from "gatsby-image";
+import Img from "next/image";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 // import parse from "html-react-parser";
 
-const ProjectCardContainer = styled(Link)`
+const ProjectCardContainer = styled("a")`
   display: grid;
   grid-template-columns: 4fr 7fr;
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
@@ -158,22 +158,24 @@ const ProjectCardImageContainer = styled("div")`
   }
 `;
 
-const ProjectCard = ({ category, title, description, thumbnail, uid }) => (
-  <ProjectCardContainer href={`/work/${uid}`}>
-    <ProjectCardContent className="ProjectCardContent">
-      {/* <ProjectCardCategory>
+const ProjectCard = ({ category, title, description, coverImage, slug }) => (
+  <Link href={`blog/${slug}`}>
+    <ProjectCardContainer>
+      <ProjectCardContent className="ProjectCardContent">
+        {/* <ProjectCardCategory>
                 {category}
             </ProjectCardCategory> */}
-      <ProjectCardTitle>{title}</ProjectCardTitle>
-      {/* <ProjectCardBlurb>{parse(description)}</ProjectCardBlurb> */}
-      <ProjectCardAction className="ProjectCardAction">
-        Details <span>&#8594;</span>
-      </ProjectCardAction>
-    </ProjectCardContent>
-    <ProjectCardImageContainer className="ProjectCardImageContainer">
-      {/* <Img fluid={thumbnail.localFile.childImageSharp.fluid} /> */}
-    </ProjectCardImageContainer>
-  </ProjectCardContainer>
+        <ProjectCardTitle>{title}</ProjectCardTitle>
+        <ProjectCardBlurb>{description}</ProjectCardBlurb>
+        <ProjectCardAction className="ProjectCardAction">
+          Details <span>&#8594;</span>
+        </ProjectCardAction>
+      </ProjectCardContent>
+      <ProjectCardImageContainer className="ProjectCardImageContainer">
+        <Img src={coverImage} layout="fill" />
+      </ProjectCardImageContainer>
+    </ProjectCardContainer>
+  </Link>
 );
 
 export default ProjectCard;
