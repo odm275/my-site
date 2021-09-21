@@ -87,7 +87,7 @@ const Section = styled("div")`
   }
 `;
 
-const WorkAction = styled(Link)`
+const WorkAction = styled("a")`
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
@@ -169,6 +169,11 @@ export default function Index({ allProjects }) {
         </Hero>
         <Section>
           {projectCards}
+          <Link href="/work">
+            <WorkAction>
+              See more work <span>&#8594;</span>
+            </WorkAction>
+          </Link>
           {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
