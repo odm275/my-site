@@ -6,7 +6,6 @@ const WorkTitle = styled("h1")`
   margin-bottom: 1em;
 `;
 export default function Work({ allProjects }) {
-  console.log(allProjects);
   const projectCards = allProjects.map((project, i) => {
     const { title, slug, description, coverImage } = project;
     return (
