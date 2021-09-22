@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import rocket from "../images/rocket.png";
+import Image from "next/image";
 
 const FooterContainer = styled("div")`
   padding-top: 3.75em;
@@ -44,8 +44,7 @@ const FooterAuthor = styled("a")`
   }
 `;
 
-const FooterRocket = styled("img")`
-  max-width: 33px;
+const ImageWrapper = styled("div")`
   margin-top: 0.25em;
 `;
 
@@ -53,7 +52,14 @@ const Footer = () => (
   <FooterContainer>
     <FooterAuthor href="https://whatoscarhasmade.com">
       © {new Date().getFullYear()} — Oscar Mejia
-      <FooterRocket className="FooterRocket" src={rocket} />
+      <ImageWrapper>
+        <Image
+          className="FooterRocket"
+          src="/assets/other/rocket.png"
+          width={33}
+          height={33}
+        />
+      </ImageWrapper>
     </FooterAuthor>
   </FooterContainer>
 );

@@ -10,6 +10,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Button from "../components/ui/Button";
 import ProjectCard from "../components/ProjectCard";
+import About from "../components/About";
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -117,13 +118,13 @@ const WorkAction = styled("a")`
   }
 `;
 
-export default function Index({ allProjects }) {
+export default function Index({ allProjects = [], myInfo = [] }) {
+  console.log("myInfo", myInfo);
   console.log("allProjects", allProjects);
   const heroPost = allProjects[0];
   const morePosts = allProjects.slice(1);
   const projectCards = allProjects.map((project, i) => {
     const { title, description, coverImage, slug } = project;
-    console.log("description", description);
     return (
       <ProjectCard
         key={i}
@@ -135,7 +136,6 @@ export default function Index({ allProjects }) {
       />
     );
   });
-  console.log(projectCards);
   return (
     <>
       <Layout>
@@ -186,24 +186,28 @@ export default function Index({ allProjects }) {
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </Section>
+        <Section>
+          <div>About</div>
+          <About myInfo={myInfo} />
+        </Section>
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const allProjects = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "description",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
-  console.log("allProjects", allProjects);
+  const allProjects = getAllPosts(
+    ["title", "date", "slug", "description", "author", "coverImage", "excerpt"],
+    "_projects"
+  );
+  // Note: There will only always be one myInfo markdown file.
+  const myInfo = getAllPosts(
+    ["email", "github", "linkedin", "CV", "bio"],
+    "_myInfo"
+  )[0];
+  console.log("myInfo", myInfo);
 
   return {
-    props: { allProjects },
+    props: { allProjects, myInfo },
   };
 }

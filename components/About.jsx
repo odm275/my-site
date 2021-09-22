@@ -1,7 +1,6 @@
 import React from "react";
-import Button from "components/_ui/Button";
+import Button from "./ui/Button";
 import styled from "@emotion/styled";
-import { RichText } from "prismic-reactjs";
 import PropTypes from "prop-types";
 
 const AboutContainer = styled("div")`
@@ -76,14 +75,18 @@ const AboutActions = styled("div")`
   }
 `;
 
-const About = ({ bio, socialLinks }) => {
+const About = ({ myInfo }) => {
+  const socialLinks = Object.entries(myInfo).map(([key, value]) => ({
+    title: key,
+    href: value,
+  }));
+  console.log("socialLinks", socialLinks);
   const socialLinksUI = socialLinks.map((social, i) => {
-    console.log("uri", social);
     return (
       <AboutLink
         key={i}
-        href={social.url}
-        target={social.target}
+        href={social.href}
+        target="_blank"
         rel="noopener noreferrer"
       >
         {social.title}
@@ -94,7 +97,12 @@ const About = ({ bio, socialLinks }) => {
   return (
     <AboutContainer>
       <AboutLinkContainer>{socialLinksUI}</AboutLinkContainer>
-      <AboutBio>{bio}</AboutBio>
+      <AboutBio>
+        "Beautiful websites are what I do best, coding in range of languages
+        including HTML, CSS, SCSS, JavaScript, jQuery, PHP and working with
+        popular frameworks like React, WordPress and Gatsby I can create a space
+        for you to grow your business and share your success."
+      </AboutBio>
       <AboutActions>
         <a
           href="mailto:pomejia@gmail.com"
