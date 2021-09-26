@@ -159,7 +159,7 @@ const ProjectCardImageContainer = styled("div")`
 `;
 
 const ProjectCard = ({ category, title, description, coverImage, slug }) => (
-  <Link href={`blog/${slug}`}>
+  <Link href={`work/${slug}`}>
     <ProjectCardContainer>
       <ProjectCardContent className="ProjectCardContent">
         {/* <ProjectCardCategory>

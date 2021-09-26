@@ -4,16 +4,19 @@ description: "Find your ideal residence and book it for a viewing!"
 coverImage: "/assets/projects/tinyhouse/tinyHouseImage.png"
 date: "2020-03-16T05:35:07.322Z"
 author:
-  name: JJ Kasper
+  name: Oscar Mejia
   picture: "/assets/blog/authors/jj.jpeg"
 ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
+repo: "https://github.com/odm275/tinyhouse-client"
+liveLink: "https://tinyhouse-dev.herokuapp.com"
+categories: "React; Apollo;Express;GraphQL;MongoDB;Typescript"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Tinyhouse is a full featured web app that lets users book listings for residential properties. Furthermore, users may create listings if their accounted is connected to stripe through their profile settings **(Note: Many of the listings are auto generated and can’t actually be booked. In other words, only listings created by actual user accounts can be booked. Additionally, you can’t book a booking you yourself created).** Tinyhouse has many features, we’ll highlight some of my favorite ones.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+### Smart Search
 
-## Lorem Ipsum
+![Tux, the Linux mascot](/assets/projects/tinyhouse/smart_search.png)
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+The smart search feature lets users enter any information related to an address(ex: street, city, or zip code). The search then will suggest(autocomplete) a list of possible matches based on its database so that the user may an available listing related to the search.
