@@ -1,13 +1,10 @@
 ---
-title: "Dynamic Routing and Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/dynamic-routing/cover.jpg"
+title: "Error: You Are Using The Simple Heuristic Fragment Matcher But Your Queries Contain Union Or Interface Types"
+excerpt: Solve the error "You are using the simple (heuristic) fragment matcher"
 date: "2020-03-16T05:35:07.322Z"
 author:
-  name: JJ Kasper
+  name: Oscar Mejia
   picture: "/assets/blog/authors/jj.jpeg"
-ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
 
 I ran into this error when consuming my GraphQL API in my front-end.

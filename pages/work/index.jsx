@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
-import ProjectCard from "../components/ProjectCard";
+import Layout from "../../components/layout";
+import { getAllPosts } from "../../lib/api";
+import ProjectCard from "../../components/ProjectCard";
 const WorkTitle = styled("h1")`
   margin-bottom: 1em;
 `;

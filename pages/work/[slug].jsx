@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import ErrorPage from "next/error";
@@ -7,14 +8,8 @@ import ReactMarkdown from "react-markdown";
 import { FiGithub } from "react-icons/fi";
 
 import Button from "../../components/ui/Button";
-import Container from "../../components/container";
-import Header from "../../components/header";
-import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
-import Head from "next/head";
-import { CMS_NAME } from "../../lib/constants";
-import markdownToHtml from "../../lib/markdownToHtml";
 
 const ProjectHeroContainer = styled("div")`
   background: ${(props) => props.theme.colors.grey300};

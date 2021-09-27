@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import Layout from "../components/layout";
-import PostCard from "../components/PostCard";
-import { getAllPosts } from "../lib/api";
+import Layout from "../../components/layout";
+import PostCard from "../../components/PostCard";
+import { getAllPosts } from "../../lib/api";
 
 const BlogTitle = styled("h1")`
   margin-bottom: 1em;
