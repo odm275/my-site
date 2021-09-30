@@ -17,7 +17,7 @@ Turns out all this error means is that we need a bit of extra set up so Apollo c
 
 Copy paste this file into the root(anywhere is fine) of your project
 
-```
+```js
 const fetch = require("node-fetch");
 const fs = require("fs");
 const path = require("path");
@@ -57,7 +57,6 @@ name
       }
     );
   });
-
 ```
 
 ## Step 2: Set up a script to run SchemaQuery.js and run it
@@ -74,14 +73,14 @@ That should generate the fragmentTypes.json file.
 
 Next we will need to import the fragmentTypes.json file where ApolloClient is declared. The result will look something like the following
 
-```
+```js
 import introspectionQueryResultData from "./fragmentTypes.json";
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-introspectionQueryResultData,
+  introspectionQueryResultData,
 });
 const cache = new InMemoryCache({ fragmentMatcher });
 const client = new ApolloClient({
-uri: "/api",
-cache
+  uri: "/api",
+  cache,
 });
 ```

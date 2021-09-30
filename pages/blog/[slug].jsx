@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 import Head from "next/head";
@@ -6,6 +6,7 @@ import Moment from "react-moment";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/layout";
+import CodeBlock from "../../components/CodeBlock";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 
 const PostHeroContainer = styled("div")`
@@ -89,7 +90,13 @@ const PostCategoryContainer = styled("div")`
 `;
 
 export default function Post({ post }) {
-  console.log("post", post);
+  const markdown = `Here is some JavaScript code:
+              ~~~js
+              console.log('It works!')
+              ~~~
+`;
+
+  console.log(post.content);
   return (
     <>
       <Layout>
@@ -102,7 +109,7 @@ export default function Post({ post }) {
           </PostDate>
         </PostMetas>
         <PostBody>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown components={CodeBlock}>{post.content}</ReactMarkdown>
         </PostBody>
       </Layout>
     </>
