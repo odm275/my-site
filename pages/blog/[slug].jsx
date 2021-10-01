@@ -50,7 +50,6 @@ const PostTitle = styled("h1")`
 `;
 
 const PostBody = styled("div")`
-  max-width: 550px;
   margin: 0 auto;
 
   .block-img {

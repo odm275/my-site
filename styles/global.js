@@ -1,17 +1,8 @@
 import { css } from "@emotion/react";
-import { colors } from "./colors";
-import { dimensions } from "./dimensions";
 
 export const globalStyles = css`
   @font-face {
     font-family: Inter;
-  }
-
-  pre {
-    overflow: scroll;
-    background-color: #ffffff;
-    border: 1px solid #898989;
-    padding: 5px;
   }
 
   html,
@@ -29,10 +20,10 @@ export const globalStyles = css`
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.5;
-    color: ${colors.grey900};
+    color: ${(props) => props.theme.colors.grey900};
     -webkit-font-smoothing: antialiased;
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
+    @media (max-width: ${(props) => props.theme.dimensions.maxwidthMobile}px) {
       font-size: 14px;
     }
 
@@ -40,20 +31,9 @@ export const globalStyles = css`
       box-sizing: border-box;
 
       &::selection {
-        background: ${colors.orange500};
+        background: ${(props) => props.theme.colors.orange500};
         color: white;
       }
     }
-  }
-
-  /*
-    A workaround for forcing accessibility wrappers
-    to have a 100% height.
-    Reach Router issue here: https: //github.com/reach/router/issues/63
-    */
-  #___gatsby,
-  div[role="group"][tabindex] {
-    height: 100%;
-    min-height: 100% !important;
   }
 `;
