@@ -9,7 +9,7 @@ author:
 
 I ran into this error when consuming my GraphQL API in my front-end.
 
-![Tux, the Linux mascot](/assets/projects/error-you-are-using-the-simple-heuristic-fragment-matcher-but-your-queries-contain-union-or-interface-types/error_screenshot.png)
+![Error Screenshot](/assets/blog/error-you-are-using-the-simple-heuristic-fragment-matcher-but-your-queries-contain-union-or-interface-types/error_screenshot.png)
 
 Turns out all this error means is that we need a bit of extra set up so Apollo client can handle union and interfaces defined in our API. This set up is documented in [Apollo’s documentation](https://www.apollographql.com/docs/react/data/fragments/#generating-possibletypes-automatically). However, this example uses apollo-boost and our set up is more robust. Thus, we'll match the difference.
 

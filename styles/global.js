@@ -3,16 +3,25 @@ import { css } from "@emotion/react";
 export const globalStyles = css`
   @font-face {
     font-family: Inter;
+    src: url("https://rsms.me/inter/inter.css");
+  }
+  html {
+    font-family: "Inter", sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: "Inter var", sans-serif;
+    }
   }
 
   html,
   body,
-  #root {
+  #__next {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100%;
-    font-family: Inter;
   }
 
   body {
