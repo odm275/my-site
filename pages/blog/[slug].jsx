@@ -89,19 +89,21 @@ const PostCategoryContainer = styled("div")`
 `;
 
 export default function Post({ post }) {
-  const markdown = `Here is some JavaScript code:
-              ~~~js
-              console.log('It works!')
-              ~~~
-`;
-
-  console.log(post.content);
+  console.log(post);
+  const HeadElement = (
+    <Head>
+      <title>{post.title}</title>
+      <meta property="description" content={post.excerpt} />
+      <meta property="og:title" content={post.title} />
+      <meta property="og:description" content={post.excerpt} />
+      <meta property="og:image" content={post.ogImage.url} />
+      <meta name="keywords" content={post.keywords} />
+      <link rel="icon" href="/favicon/favicon.ico" />
+    </Head>
+  );
   return (
     <>
-      <Head>
-        <title>Oscar Mejia</title>
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      {HeadElement}
       <Layout>
         <PostCategoryContainer className="category-container"></PostCategoryContainer>
         <PostTitle>{post.title}</PostTitle>
@@ -122,7 +124,7 @@ export default function Post({ post }) {
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(
     params.slug,
-    ["title", "date", "author", "content"],
+    ["title", "excerpt", "date", "author", "content", "ogImage", "keywords"],
     "_blog"
   );
   return {

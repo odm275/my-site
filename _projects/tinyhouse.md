@@ -7,7 +7,7 @@ author:
   name: Oscar Mejia
   picture: "/assets/blog/authors/jj.jpeg"
 ogImage:
-  url: "/assets/blog/dynamic-routing/cover.jpg"
+  url: "/assets/projects/tinyhouse/tinyHouseImage.png"
 repo: "https://github.com/odm275/tinyhouse-client"
 liveLink: "https://tinyhouse-dev.herokuapp.com"
 categories: "React; Apollo;Express;GraphQL;MongoDB;Typescript"

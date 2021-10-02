@@ -1,10 +1,13 @@
 ---
 title: "Error: You Are Using The Simple Heuristic Fragment Matcher But Your Queries Contain Union Or Interface Types"
-excerpt: Solve the error "You are using the simple (heuristic) fragment matcher"
+excerpt: Solve the error:"You are using the simple (heuristic) fragment matcher"
 date: "2020-03-16T05:35:07.322Z"
+ogImage:
+  url: "/assets/blog/error-you-are-using-the-simple-heuristic-fragment-matcher-but-your-queries-contain-union-or-interface-types/error_screenshot.png"
 author:
   name: Oscar Mejia
   picture: "/assets/blog/authors/jj.jpeg"
+keywords: "Oscar Mejia,React,GraphQL"
 ---
 
 I ran into this error when consuming my GraphQL API in my front-end.

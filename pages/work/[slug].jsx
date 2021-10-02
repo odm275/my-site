@@ -74,12 +74,21 @@ export default function Project({ project }) {
   const skills = project.categories.map((kind) => {
     return <Skill>{kind}</Skill>;
   });
+
+  const HeadElement = (
+    <Head>
+      <title>{project.title}</title>
+      <meta property="description" content={project.description} />
+      <meta property="og:title" content={project.title} />
+      <meta property="og:description" content={project.description} />
+      <meta property="og:image" content={project.ogImage.url} />
+      <meta name="keywords" content={project.categories.join(",")} />
+      <link rel="icon" href="/favicon/favicon.ico" />
+    </Head>
+  );
   return (
     <>
-      <Head>
-        <title>Oscar Mejia</title>
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      {HeadElement}
       <Layout>
         {router.isFallback ? (
           <ProjectTitle>Loading…</ProjectTitle>
@@ -131,6 +140,7 @@ export async function getStaticProps({ params }) {
     params.slug,
     [
       "title",
+      "description",
       "coverImage",
       "date",
       "author",

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import Layout from "../../components/layout";
 import PostCard from "../../components/PostCard";
 import { getAllPosts } from "../../lib/api";
-import { blogPageMeta } from "../meta-data";
+import { blogPageMeta } from "../../meta-data";
 
 const BlogTitle = styled("h1")`
   margin-bottom: 1em;

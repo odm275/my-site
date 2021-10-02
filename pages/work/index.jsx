@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Layout from "../../components/layout";
 import ProjectCard from "../../components/ProjectCard";
 import { getAllPosts } from "../../lib/api";
-import { workPageMeta } from "../meta-data";
+import { workPageMeta } from "../../meta-data";
 
 const WorkTitle = styled("h1")`
   margin-bottom: 1em;
@@ -63,7 +63,17 @@ export default function Work({ allProjects }) {
 
 export async function getStaticProps() {
   const allProjects = getAllPosts(
-    ["title", "date", "slug", "description", "author", "coverImage", "excerpt"],
+    [
+      "title",
+      "date",
+      "slug",
+      "description",
+      "author",
+      "coverImage",
+      "ogImage",
+      "excerpt",
+      "categories",
+    ],
     "_projects"
   );
 
