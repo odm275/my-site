@@ -6,7 +6,7 @@ import Button from "../components/ui/Button";
 import ProjectCard from "../components/ProjectCard";
 import About from "../components/About";
 import { getAllPosts } from "../lib/api";
-
+import { frontPageMeta } from "../meta-data";
 const Hero = styled("div")`
   padding-top: 2.5em;
   padding-bottom: 3em;
@@ -113,9 +113,34 @@ const WorkAction = styled("a")`
   }
 `;
 
+const HeadElement = (
+  <Head>
+    <title>{frontPageMeta.title.value}</title>
+    <meta
+      property={frontPageMeta.description.property}
+      content={frontPageMeta.description.content}
+    />
+    <meta
+      property={frontPageMeta.ogTitle.property}
+      content={frontPageMeta.ogTitle.content}
+    />
+    <meta
+      property={frontPageMeta.ogDescription.property}
+      content={frontPageMeta.ogDescription.content}
+    />
+    <meta
+      property={frontPageMeta.ogImage.property}
+      content={frontPageMeta.ogImage.content}
+    />
+    <meta
+      name={frontPageMeta.keywords.name}
+      content={frontPageMeta.keywords.content}
+    />
+    <link rel="icon" href="/favicon/favicon.ico" />
+  </Head>
+);
+
 export default function Index({ allProjects = [], myInfo = [] }) {
-  console.log("myInfo", myInfo);
-  console.log("allProjects", allProjects);
   const heroPost = allProjects[0];
   const morePosts = allProjects.slice(1);
   const projectCards = allProjects.map((project, i) => {
@@ -131,32 +156,10 @@ export default function Index({ allProjects = [], myInfo = [] }) {
       />
     );
   });
+
   return (
     <>
-      <Head>
-        <title>Oscar Mejia | Software Developer in Houston</title>
-        <meta
-          property="description"
-          content="Come check out how Oscar Mejia can help you use tech to add value to your business."
-        />
-        <meta
-          property="og:title"
-          content="Oscar Mejia|Software Developer in Houston"
-        />
-        <meta
-          property="og:description"
-          content="Come check out how Oscar Mejia can help you use tech to add value to your business."
-        />
-        <meta
-          property="og:image"
-          content="/assets/other/software_developer_services.jpg"
-        />
-        <meta
-          name="keywords"
-          content="Software Engineer,Developer,Freelance,Houston Texas"
-        />
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      {HeadElement}
       <Layout>
         <Hero>
           <div>
