@@ -1,7 +1,9 @@
+import Head from "next/head";
 import styled from "@emotion/styled";
 import Layout from "../../components/layout";
-import { getAllPosts } from "../../lib/api";
 import ProjectCard from "../../components/ProjectCard";
+import { getAllPosts } from "../../lib/api";
+
 const WorkTitle = styled("h1")`
   margin-bottom: 1em;
 `;
@@ -22,6 +24,10 @@ export default function Work({ allProjects }) {
 
   return (
     <>
+      <Head>
+        <title>Oscar Mejia</title>
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
       <Layout>
         <WorkTitle>Work</WorkTitle>
         <>{projectCards || null}</>

@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Layout from "../../components/layout";
@@ -42,6 +43,10 @@ export default function Blog({ allPosts }) {
   });
   return (
     <>
+      <Head>
+        <title>Oscar Mejia</title>
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
       <Layout>
         <BlogTitle>Blog</BlogTitle>
         <BlogGrid>{postCards}</BlogGrid>

@@ -1,16 +1,11 @@
+import Head from "next/head";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
-import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
 import Button from "../components/ui/Button";
 import ProjectCard from "../components/ProjectCard";
 import About from "../components/About";
+import { getAllPosts } from "../lib/api";
 
 const Hero = styled("div")`
   padding-top: 2.5em;
@@ -138,6 +133,30 @@ export default function Index({ allProjects = [], myInfo = [] }) {
   });
   return (
     <>
+      <Head>
+        <title>Oscar Mejia | Software Developer in Houston</title>
+        <meta
+          property="description"
+          content="Come check out how Oscar Mejia can help you use tech to add value to your business."
+        />
+        <meta
+          property="og:title"
+          content="Oscar Mejia|Software Developer in Houston"
+        />
+        <meta
+          property="og:description"
+          content="Come check out how Oscar Mejia can help you use tech to add value to your business."
+        />
+        <meta
+          property="og:image"
+          content="/assets/other/software_developer_services.jpg"
+        />
+        <meta
+          name="keywords"
+          content="Software Engineer,Developer,Freelance,Houston Texas"
+        />
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
       <Layout>
         <Hero>
           <div>

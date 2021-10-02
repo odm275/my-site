@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import PropTypes from "prop-types";
 import Head from "next/head";
+import PropTypes from "prop-types";
 import Moment from "react-moment";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
@@ -98,6 +98,10 @@ export default function Post({ post }) {
   console.log(post.content);
   return (
     <>
+      <Head>
+        <title>Oscar Mejia</title>
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
       <Layout>
         <PostCategoryContainer className="category-container"></PostCategoryContainer>
         <PostTitle>{post.title}</PostTitle>

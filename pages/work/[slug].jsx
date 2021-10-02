@@ -75,48 +75,54 @@ export default function Project({ project }) {
     return <Skill>{kind}</Skill>;
   });
   return (
-    <Layout>
-      {router.isFallback ? (
-        <ProjectTitle>Loading…</ProjectTitle>
-      ) : (
-        <>
-          <ProjectTitle>{project.title}</ProjectTitle>
-          <SocialMediaContainer>
-            <a href={project.repo} target="_blank">
-              <FiGithub />
-            </a>
-            <a
-              css={{
-                paddingLeft: "20px",
-                textDecoration: "none",
-              }}
-              href={project.liveLink}
-              target="_blank"
-            >
-              Live Link
-            </a>
-          </SocialMediaContainer>
-          {project.coverImage && (
-            <ProjectHeroContainer>
-              <Image
-                src={project.coverImage}
-                layout="intrinsic"
-                height={273}
-                width={600}
-              />
-            </ProjectHeroContainer>
-          )}
-          <ProjectBody>
-            <ReactMarkdown>{project.content}</ReactMarkdown>
-            <SkillsSectionTitle>Skills + Technology</SkillsSectionTitle>
-            <SkillsWrapper>{skills}</SkillsWrapper>
-            <WorkLink to={"/work"}>
-              <Button className="Button--secondary">See other work</Button>
-            </WorkLink>
-          </ProjectBody>
-        </>
-      )}
-    </Layout>
+    <>
+      <Head>
+        <title>Oscar Mejia</title>
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
+      <Layout>
+        {router.isFallback ? (
+          <ProjectTitle>Loading…</ProjectTitle>
+        ) : (
+          <>
+            <ProjectTitle>{project.title}</ProjectTitle>
+            <SocialMediaContainer>
+              <a href={project.repo} target="_blank">
+                <FiGithub />
+              </a>
+              <a
+                css={{
+                  paddingLeft: "20px",
+                  textDecoration: "none",
+                }}
+                href={project.liveLink}
+                target="_blank"
+              >
+                Live Link
+              </a>
+            </SocialMediaContainer>
+            {project.coverImage && (
+              <ProjectHeroContainer>
+                <Image
+                  src={project.coverImage}
+                  layout="intrinsic"
+                  height={273}
+                  width={600}
+                />
+              </ProjectHeroContainer>
+            )}
+            <ProjectBody>
+              <ReactMarkdown>{project.content}</ReactMarkdown>
+              <SkillsSectionTitle>Skills + Technology</SkillsSectionTitle>
+              <SkillsWrapper>{skills}</SkillsWrapper>
+              <WorkLink to={"/work"}>
+                <Button className="Button--secondary">See other work</Button>
+              </WorkLink>
+            </ProjectBody>
+          </>
+        )}
+      </Layout>
+    </>
   );
 }
 
