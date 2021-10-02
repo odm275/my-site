@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import Layout from "../../components/layout";
 import PostCard from "../../components/PostCard";
 import { getAllPosts } from "../../lib/api";
+import { blogPageMeta } from "../meta-data";
 
 const BlogTitle = styled("h1")`
   margin-bottom: 1em;
@@ -26,8 +27,34 @@ const BlogGrid = styled("div")`
   }
 `;
 
+const HeadElement = (
+  <Head>
+    <title>{blogPageMeta.title.value}</title>
+    <meta
+      property={blogPageMeta.description.property}
+      content={blogPageMeta.description.content}
+    />
+    <meta
+      property={blogPageMeta.ogTitle.property}
+      content={blogPageMeta.ogTitle.content}
+    />
+    <meta
+      property={blogPageMeta.ogDescription.property}
+      content={blogPageMeta.ogDescription.content}
+    />
+    <meta
+      property={blogPageMeta.ogImage.property}
+      content={blogPageMeta.ogImage.content}
+    />
+    <meta
+      name={blogPageMeta.keywords.name}
+      content={blogPageMeta.keywords.content}
+    />
+    <link rel="icon" href="/favicon/favicon.ico" />
+  </Head>
+);
+
 export default function Blog({ allPosts }) {
-  console.log("allPosts", allPosts);
   const postCards = allPosts.map((post, i) => {
     return (
       <PostCard
@@ -43,10 +70,7 @@ export default function Blog({ allPosts }) {
   });
   return (
     <>
-      <Head>
-        <title>Oscar Mejia</title>
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      {HeadElement}
       <Layout>
         <BlogTitle>Blog</BlogTitle>
         <BlogGrid>{postCards}</BlogGrid>

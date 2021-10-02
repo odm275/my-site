@@ -1,6 +1,6 @@
-export const frontPage = {
+export const frontPageMeta = {
     title: {
-      title: "Oscar Mejia | Software Developer in Houston",
+      value: "Oscar Mejia | Software Developer in Houston",
     },
     description: {
       property: "og:description",
@@ -22,7 +22,64 @@ export const frontPage = {
     },
     keywords: {
       name: "keywords",
-      content: "Software Engineer,Developer,Freelance,Houston Texas",
+      content: "Software Engineer,Developer,Freelance,Houston Texas, Oscar Mejia",
     },
   },
 
+
+  export const workPageMeta = {
+    title: {
+      value: "Oscar Mejia | Software Developer in Houston",
+    },
+    description: {
+      property: "og:description",
+      content:
+        "A Taste of Oscar Mejia's Work",
+    },
+    ogTitle: {
+      property: "og:title",
+      content: "Oscar Mejia | Software Developer in Houston",
+    },
+    ogDescription: {
+      property: "og:description",
+      content:
+      "A Taste of Oscar Mejia's Work",
+    },
+    ogImage: {
+      property: "og:image",
+      content: "/assets/other/software_developer_services.jpg",
+    },
+    keywords: {
+      name: "keywords",
+      content: "Software Engineer,Developer,Freelance,Houston Texas, Oscar Mejia",
+    },
+  },
+
+
+  export const blogPageMeta = {
+    title: {
+      value: "Oscar Mejia | Software Developer in Houston",
+    },
+    description: {
+      property: "og:description",
+      content:
+        "Search Oscar Mejia's Blog Posts",
+    },
+    ogTitle: {
+      property: "og:title",
+      content: "Oscar Mejia | Software Developer in Houston",
+    },
+    ogDescription: {
+      property: "og:description",
+      content:
+      "Search Oscar Mejia's Blog Posts",
+    },
+    ogImage: {
+      property: "og:image",
+      content: "/assets/other/software_developer_services.jpg",
+    },
+    keywords: {
+      name: "keywords",
+      content: "Software Engineer,Developer,Freelance,Houston Texas, Blog, Oscar Mejia",
+    },
+  },
