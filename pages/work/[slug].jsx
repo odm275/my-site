@@ -2,10 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import ErrorPage from "next/error";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Moment from "react-moment";
 import ReactMarkdown from "react-markdown";
-import { FiGithub } from "react-icons/fi";
 
 import Button from "../../components/ui/Button";
 import Layout from "../../components/layout";
@@ -65,7 +65,6 @@ const SocialMediaContainer = styled("div")`
 `;
 
 export default function Project({ project }) {
-  console.log("project", project);
   const router = useRouter();
   if (!router.isFallback && !project?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -97,11 +96,15 @@ export default function Project({ project }) {
             <ProjectTitle>{project.title}</ProjectTitle>
             <SocialMediaContainer>
               <a href={project.repo} target="_blank">
-                <FiGithub />
+                <Image
+                  src="/assets/other/githubIcon.png"
+                  width={20}
+                  height={20}
+                />
               </a>
               <a
-                css={{
-                  paddingLeft: "20px",
+                style={{
+                  paddingLeft: "5px",
                   textDecoration: "none",
                 }}
                 href={project.liveLink}
